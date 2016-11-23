@@ -1,0 +1,27 @@
+<% include ../pages/partials/head %>
+
+<div id="page-content-wrapper">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+				<div class="jumbotron">
+					<h1>Game over !</h1>
+					<p>Votre score est de <%= number %> points. Concrètement, c'est nul. </p>
+					<br/>
+					<p class="text-center">
+						<form action="/retry" method="POST" class="text-center">
+							<span>Votre pseudo : </span>
+							<input type="text" id="pseudo" name="pseudo" value="<%= pseudo %>">
+							</br></br>
+							<button class="btn btn-primary btn-lg" type="submit">
+								S'améliorer <i class="fa fa-refresh" aria-hidden="true"></i>
+							</button>
+						</form>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<% include ../pages/partials/footer %>

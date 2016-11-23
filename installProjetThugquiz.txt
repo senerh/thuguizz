@@ -3,6 +3,7 @@ npm install express --save
 npm install ejs --save
 npm install bower --save
 npm install mongodb --save
+npm install body-parser --save
 
 bower init
 bower install jquery —-save
