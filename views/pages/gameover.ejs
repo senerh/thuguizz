@@ -9,14 +9,22 @@
 					<p>Votre score est de <%= number %> points. Concrètement, c'est nul. </p>
 					<br/>
 					<p class="text-center">
+						<div class="row">
 						<form action="/retry" method="POST" class="text-center">
+							<div class="col-md-4">
+							<img class="img-responsive img-thumbnail" 
+							src="http://s2.quickmeme.com/img/8f/8fe3d6d3a0628157a7a638663a73aea772baa13849423e877f765806cb2f075f.jpg"/>
+							</div>
+							<div class="col-md-8">
 							<span>Votre pseudo : </span>
 							<input type="text" id="pseudo" name="pseudo" value="<%= pseudo %>">
 							</br></br>
 							<button class="btn btn-primary btn-lg" type="submit">
 								S'améliorer <i class="fa fa-refresh" aria-hidden="true"></i>
 							</button>
+							</div>
 						</form>
+						</div>
 					</p>
 				</div>
 			</div>
