@@ -17,7 +17,7 @@ var list = null;  //List of shuffled questions
 /**
  * Connection to database
  * Use 'mongodb://localhost:27017/thuguizbd' for dev
- * Use '//mongodb://userepul:epul@172.31.7.31:27017/' for prod
+ * Use '//mongodb://userepul:epul@172.31.7.31:27017/thuguizbd' for prod
  */
 MongoClient.connect('mongodb://localhost:27017/thuguizbd', (err, database) => {
   if (err) return console.log(err)
@@ -71,14 +71,19 @@ app.post('/game', (req, res) => {
       db.collection('questions').find().toArray((err, r_questions) => {
         if (err) return console.log(err);
 
-        list = shuffle(r_questions);
+        if(number>=list.length)
+          res.redirect('/gameover');
 
+        list = shuffle(r_questions);
+          
         renderGame(res, r_players);
       })
     } else {
 
       if(req.body.uid == crypto.createHash('md5').update(req.body.answer+req.body.answer).digest("hex")) {
         number++;
+        if(number>=list.length)
+          res.redirect('/gameover');
       } else {
         res.redirect('/gameover');
       }
@@ -151,8 +156,19 @@ app.post('/retry', (req, res) => {
   })
 })
 
+/**
+ ************** TEMP ****************
+ */
 app.get('/deleteScores', (req, res) => {
   db.collection('players').remove();
+  db.collection('players');
+})
+/**
+ ************** TEMP ****************
+ */
+app.get('/deleteQuestions', (req, res) => {
+  db.collection('questions').remove();
+  db.collection('questions');
 })
 
 /**
