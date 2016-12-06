@@ -71,7 +71,7 @@ app.post('/game', (req, res) => {
       db.collection('questions').find().toArray((err, r_questions) => {
         if (err) return console.log(err);
 
-        if(number>=list.length)
+        if(r_questions==null || number>=r_questions.length)
           res.redirect('/gameover');
 
         list = shuffle(r_questions);
