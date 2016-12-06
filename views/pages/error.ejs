@@ -1,0 +1,23 @@
+<% include ../pages/partials/head %>
+
+<div id="page-content-wrapper">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+				<div class="jumbotron">
+					<h1>Erreur !</h1>
+					<p class="text-center">
+						<%= err %>
+						<form action="/" method="GET" class="text-center">
+						<button class="btn btn-primary btn-lg" type="submit">
+							Retour à la page d'accueil
+						</button>
+						</form>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<% include ../pages/partials/footer %>

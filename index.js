@@ -5,6 +5,8 @@ const MongoClient = require('mongodb').MongoClient;     //Needed for Mongo datab
 
 const app = express();                                  //Launch app
 app.use(bodyParser.urlencoded({extended: true}))        //Allow POST
+app.set('view engine', 'ejs');                          //Use EJS to have layout
+app.set('views', __dirname + '/views');                 //Give path to EJS views
 
 //Global vars
 var db;           //Database
@@ -12,7 +14,6 @@ var number = 1;   //Current question number
 var score = 0;    //Final score
 var pseudo = "";  //Player name saved
 var list = null;  //List of shuffled questions
-
 
 /**
  * Connection to database
@@ -24,15 +25,12 @@ MongoClient.connect('mongodb://localhost:27017/thuguizbd', (err, database) => {
   db = database
 })
 
-app.set('view engine', 'ejs');              //Use EJS to have layout
-app.set('views', __dirname + '/views');     //Give path to EJS views
-
-
 /**
  * Shuffle attribut in array
  */
 function shuffle(a) {
     var j, x, i;
+    if(a == null) return a;
     for (i = a.length; i; i--) {
         j = Math.floor(Math.random() * i);
         x = a[i - 1];
@@ -47,7 +45,7 @@ function shuffle(a) {
  */
 app.get('/', (req, res) => {
   db.collection('players').find().sort('score', 'desc').toArray((err, r_players) => {
-    if (err) return console.log(err);
+    if (err) res.render('pages/error', {err: err});
 
     number = 1;
     score = 0;
@@ -63,27 +61,24 @@ app.get('/', (req, res) => {
 app.post('/game', (req, res) => {
 
   db.collection('players').find().sort('score', 'desc').toArray((err, r_players) => {
-    if (err) return console.log(err);
+    if (err) res.render('pages/error', {err: err});
 
+    //Lancement du jeu
     if(list == null) {
       number = 1;
       score = 0;
       db.collection('questions').find().toArray((err, r_questions) => {
-        if (err) return console.log(err);
-
-        if(r_questions==null || number>=r_questions.length)
-          res.redirect('/gameover');
+        if (err) res.render('pages/error', {err: err});
 
         list = shuffle(r_questions);
           
         renderGame(res, r_players);
       })
-    } else {
+    } //Nouvelle question 
+    else {
 
       if(req.body.uid == crypto.createHash('md5').update(req.body.answer+req.body.answer).digest("hex")) {
         number++;
-        if(number>=list.length)
-          res.redirect('/gameover');
       } else {
         res.redirect('/gameover');
       }
@@ -97,6 +92,8 @@ app.post('/game', (req, res) => {
  * Send new question to game page
  */
 function renderGame(res, r_players) {
+
+    if(list == null || number >= list.length) res.redirect('/gameover');
 
     //Get current question and current answer
     var question = list[number-1];
@@ -128,7 +125,7 @@ app.get('/gameover', (req, res) => {
   number = 1;
 
   db.collection('players').find().sort('score', 'desc').toArray((err, r_players) => {
-    if (err) return console.log(err);
+    if (err) res.render('pages/error', {err: err});
 
     res.render('pages/gameover', {
       number: score,
@@ -150,8 +147,8 @@ app.post('/retry', (req, res) => {
   var player = { pseudo : pseudo, score : score }
   
   db.collection('players').save(player, (err, result) => {
-    if (err) return console.log(err)
-    console.log(player)
+    if (err) res.render('pages/error', {err: err});
+    
     res.redirect(307, '/game');    //Redirect 307 for POST
   })
 })
