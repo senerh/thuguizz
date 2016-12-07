@@ -88,16 +88,10 @@ app.post('/game', (req, res) => {
         }
 
         list = shuffle(r_questions);
-<<<<<<< HEAD
-
         if(number >= list.length) {
           res.render('pages/error', {err: "L'application ne contient pas de question."});
           return;
         }
-
-=======
-
->>>>>>> blabla
         renderGame(res, r_players);
       })
     } //Nouvelle question
@@ -184,16 +178,10 @@ app.post('/retry', (req, res) => {
   var player = { pseudo : pseudo, score : score }
 
   db.collection('players').save(player, (err, result) => {
-<<<<<<< HEAD
     if (err) {
       res.render('pages/error', {err: err});
       return;
     }
-
-=======
-    if (err) res.render('pages/error', {err: err});
-
->>>>>>> blabla
     res.redirect(307, '/game');    //Redirect 307 for POST
   })
 })
