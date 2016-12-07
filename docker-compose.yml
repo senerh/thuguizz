@@ -1,0 +1,16 @@
+mongodb:
+  image: mongo
+  ports:
+    - "27017:27017"
+
+mongo-seed:
+  build: ./mongo-seed
+  links:
+    - mongodb
+
+webserver:
+  image: senerh/node-web-app
+  ports:
+    - "80:8080"
+  links:
+    - mongodb

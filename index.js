@@ -18,9 +18,9 @@ var list = null;  //List of shuffled questions
 /**
  * Connection to database
  * Use 'mongodb://localhost:27017/thuguizbd' for dev
- * Use '//mongodb://userepul:epul@172.31.7.31:27017/thuguizbd' for prod
+ * Use '//mongodb://172.31.7.31:27017/thuguizbd' for prod
  */
-MongoClient.connect('mongodb://localhost:27017/thuguizbd', (err, database) => {
+MongoClient.connect('mongodb://mongodb:27017/thuguizbd', (err, database) => {
   if (err) return console.log(err)
   db = database
 })
@@ -71,10 +71,10 @@ app.post('/game', (req, res) => {
         if (err) res.render('pages/error', {err: err});
 
         list = shuffle(r_questions);
-          
+
         renderGame(res, r_players);
       })
-    } //Nouvelle question 
+    } //Nouvelle question
     else {
 
       if(req.body.uid == crypto.createHash('md5').update(req.body.answer+req.body.answer).digest("hex")) {
@@ -145,10 +145,10 @@ app.post('/retry', (req, res) => {
   if(pseudo == "") pseudo = "Guest";
 
   var player = { pseudo : pseudo, score : score }
-  
+
   db.collection('players').save(player, (err, result) => {
     if (err) res.render('pages/error', {err: err});
-    
+
     res.redirect(307, '/game');    //Redirect 307 for POST
   })
 })
