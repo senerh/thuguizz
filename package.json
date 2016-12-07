@@ -4,7 +4,7 @@
   "description": "projet Cloud",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 0"
   },
   "author": "FRANCOIS-GERLAND-LETOURNEUR-SENER",
   "license": "ISC",
