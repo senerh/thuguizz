@@ -21,7 +21,7 @@ var list = null;  //List of shuffled questions
  * Use '//mongodb://172.31.7.31:27017/thuguizbd' for prod
  */
 function connect() {
-  MongoClient.connect('mongodb://mongodb:27017/thuguizbd', (err, database) => {
+  MongoClient.connect('mongodb://mongodb:27017/thuguizzbd', (err, database) => {
     if (err) {
       res.render('pages/error', {err: err});
       return;
