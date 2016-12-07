@@ -18,12 +18,12 @@ var list = null;  //List of shuffled questions
 /**
  * Connection to database
  * Use 'mongodb://localhost:27017/thuguizbd' for dev
- * Use '//mongodb://userepul:epul@172.31.7.31:27017/thuguizbd' for prod
+ * Use '//mongodb://172.31.7.31:27017/thuguizbd' for prod
  */
 function connect() {
-  MongoClient.connect('mongodb://localhost:27017/thuguizbd', (err, database) => {
+  MongoClient.connect('mongodb://mongodb:27017/thuguizbd', (err, database) => {
     if (err) {
-      res.render('pages/error', {err: err}); 
+      res.render('pages/error', {err: err});
       return;
     }
     db = database
@@ -54,7 +54,7 @@ app.get('/', (req, res) => {
 
   db.collection('players').find().sort('score', 'desc').limit(10).toArray((err, r_players) => {
     if (err) {
-      res.render('pages/error', {err: err}); 
+      res.render('pages/error', {err: err});
       return;
     }
 
@@ -73,7 +73,7 @@ app.post('/game', (req, res) => {
 
   db.collection('players').find().sort('score', 'desc').limit(10).toArray((err, r_players) => {
     if (err) {
-      res.render('pages/error', {err: err}); 
+      res.render('pages/error', {err: err});
       return;
     }
 
@@ -83,20 +83,24 @@ app.post('/game', (req, res) => {
       score = 0;
       db.collection('questions').find().toArray((err, r_questions) => {
         if (err) {
-          res.render('pages/error', {err: err}); 
+          res.render('pages/error', {err: err});
           return;
         }
 
         list = shuffle(r_questions);
-        
+<<<<<<< HEAD
+
         if(number >= list.length) {
           res.render('pages/error', {err: "L'application ne contient pas de question."});
           return;
         }
-        
+
+=======
+
+>>>>>>> blabla
         renderGame(res, r_players);
       })
-    } //Nouvelle question 
+    } //Nouvelle question
     else {
 
       if(req.body.uid == crypto.createHash('md5').update(req.body.answer+req.body.answer).digest("hex")) {
@@ -108,7 +112,7 @@ app.post('/game', (req, res) => {
       if(number >= list.length) {
         res.redirect('/gameover');
       }
-      
+
       renderGame(res, r_players);
     }
   })
@@ -156,7 +160,7 @@ app.get('/gameover', (req, res) => {
 
   db.collection('players').find().sort('score', 'desc').limit(10).toArray((err, r_players) => {
     if (err) {
-      res.render('pages/error', {err: err}); 
+      res.render('pages/error', {err: err});
       return;
     }
 
@@ -178,13 +182,18 @@ app.post('/retry', (req, res) => {
   if(pseudo == "") pseudo = "Guest";
 
   var player = { pseudo : pseudo, score : score }
-  
+
   db.collection('players').save(player, (err, result) => {
+<<<<<<< HEAD
     if (err) {
-      res.render('pages/error', {err: err}); 
+      res.render('pages/error', {err: err});
       return;
     }
-    
+
+=======
+    if (err) res.render('pages/error', {err: err});
+
+>>>>>>> blabla
     res.redirect(307, '/game');    //Redirect 307 for POST
   })
 })
