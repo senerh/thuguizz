@@ -12,33 +12,4 @@
 ,{question : 'Où est-ce qu\'on s\'enjaille le plus ?', reponse1 : 'Dans le train jusqu\'au péage de Roussillon', reponse2 : 'A la coloc', reponse3 : 'Dans un évènement BDE actuel (sachant que c\'etait mieux avant'}
 ,{question : 'Sa mère il fait froid !', reponse1 : 'Bah oui on a plus de chauffage', reponse2 : 'C\'est l\'hiver, c\'est normal arrête de te plaindre...', reponse3 : 'On va pouvoir skier Aightt !'}
 ,{question : 'Notre plafond est-il trop beau ?', reponse1 : 'Quel plafond ?', reponse2 : 'Yep ! Tout neuf !', reponse3 : 'Avant il était tout neuf, mais ça c\'etait avant'}
-,{question : 'On préfère manger ...', reponse1 : 'Un JCC (Jambon cru chèvre)', reponse2 : 'Au RU', reponse3 : 'Un Tacos'}
-,{question : 'Est-ce que Loïc est un fragile ?', reponse1 : 'Non, il connait des techniques avancées pour éviter un cobra', reponse2 : 'Oui, clairement', reponse3 : 'J\'ose pas me prononcer, j\'ai trop peur de lui'}
-,{question : 'Qui a déjà rencontrer JM Aulas', reponse1 : 'Guillaume', reponse2 : 'Karl', reponse3 : 'Hakan'}
-,{question : 'Facile, quel est le surnom de Emmanuel Perrin', reponse1 : 'Hélico ...', reponse2 : 'Mr le directeur', reponse3 : 'Manu (attention y a peut-être un piège)'}
-,{question : 'Quel est le plus important au foot de table ?', reponse1 : 'Toujours plus fort, toujours plus fort, toujours plus fort', reponse2 : 'La chatte', reponse3 : 'Tordre les barres'}
-,{question : 'Qu\'est-ce que le World Wide Web', reponse1 : 'Tout le monde en parle mais personne ne sait vraiment', reponse2 : 'Je sais pas moi je vais sur l\'internet', reponse3 : 'un système hypertexte public fonctionnant sur Internet'}
-,{question : 'La règle c\'est quoi ?', reponse1 : 'Ne jamais avoir plus de 10% de baterrie en arrivant le matin', reponse2 : 'Toujours tenter une petite pissette de temps en temps', reponse3 : 'Faire passer les 3A sous le Baby'}
-,{question : 'Pour être efficace à la salle de musculation, il faut ...', reponse1 : 'Pousser de la fonte mais s\'arrêter dès que tu commences à forcer', reponse2 : 'Se donner à fond sans jamais rien lâcher', reponse3 : 'La muscu c\'est pour les ptites frappes'}
-,{question : 'La dragon existe-t-elle vraiment ?', reponse1 : 'Oui ! Elle est déjà passée très, très, très, très, très, très, très rarement', reponse2 : 'C\'est une légende', reponse3 : 'On dit UN dragon, pas UNE dragon'}
-,{question : 'Qui est notre prof préféré', reponse1 : 'Antoine Carron (j\'éspère qu\'elle va tomber à la soutenance celle la)', reponse2 : 'GI JOE', reponse3 : 'Le prof de Linux TPÈ TDÉ la, je sais plus son nom'}
-,{question : 'Quelle est la passion du prof d\'IOT', reponse1 : 'Installer ses petits Raspberry PI de bon matin', reponse2 : 'Pisser du code', reponse3 : 'Expliquer à ses élèves ce qu\'ils doivent faire dans ses TP'}
-,{question : 'Qui est le meilleur mec au football ?', reponse1 : 'Ogier est très bon mais il joue en dehors des lignes, frappe en dehors des cages, est dangereux sur le terrain et a l\'air d\'un handic avec sa capuche', reponse2 : 'Les deux jumeaux qui sont pas très français', reponse3 : 'Hakan (trop facile pour être la bonne réponse)'}
-,{question : 'Qui est le mec avec le plus de tunes ?', reponse1 : 'Franck, mais il le montre pas', reponse2 : 'Ogier, le mec bosse même la nuit pour se faire des tunes', reponse3 : 'Nathan, il a masse bourses'}
-,{question : 'Ca babytte ?', reponse1 : 'Carrément ! On fera le rapport dimanche après-midi pour le rendre dimanche minuit', reponse2 : 'Non, j\'en ai marre de perdre contre NatNatChatte', reponse3 : 'Non, j\'aime pas trop le football de table'}
-,{question : 'Pourquoi tu l\'as pas arrêté ?', reponse1 : 'J\'étais embuté chef', reponse2 : 'Les barres c\'est de la merde', reponse3 : 'Mais parceque ! Il roule sur le gardien aussi la !'}
-,{question : 'Franck c\'est quoi ?' , reponse1 : 'Un zoreille', reponse2 : 'Un sauvage', reponse3 : 'Un Moukate'}
-,{question : 'Est-ce que Windows c\'est nul ?', reponse1 : 'Oui', reponse2 : 'Oui', reponse3 : 'Oui'}
-,{question : 'Quel est le meilleur tacos de Lyon', reponse1 : 'Hammamet', reponse2 : 'Cette question est beaucoup trop simple', reponse3 : 'Je sais pas, j\'aime pas les tacos BOUHHHHHH'}
-,{question : 'Quelles sont les lagues parlées par Hakan', reponse1 : 'Turc - Anglais - Italien - Grec Ancien', reponse2 : 'Turc - Anglais - Espagnol - Grec Ancien', reponse3 : 'Turc - Anglais - Espagnol - Grec'}
-,{question : 'Qui s\'en fou ?', reponse1 : 'Franchement, tout le monde', reponse2 : 'Moi, moi, moi, moi', reponse3 : 'Elle est nulle cette question'}
-,{question : 'Quel est son surnom ?', reponse1 : 'PGB', reponse2 : 'PGM', reponse3 : 'Gros monsieur'}
-,{question : 'Quel est le surnom de Sylvain sur Thuglife', reponse1 : 'On sait pas, il parle trop peu', reponse2 : 'Sylvain l\'assassin', reponse3 : 'Sylvaine'}
-,{question : 'Quelle est la différence entre java 7 et 8', reponse1 : 'MDR, aucune putain d\'idée', reponse2 : 'Java 8 permet aux méthodes déclarées dans les interfaces d\'avoir une implémentation', reponse3 : 'Je m\'en fou complétement, j\'aime pas le JAVA'}
-,{question : 'Le SSD, ça change quoi ?', reponse1 : 'Ça fait la diff', reponse2 : 'C\'est juste beaucoup plus rapide', reponse3 : 'C\'est juste plus cher qu\'un HDD'}
-,{question : 'En vrai, il fait quoi comme sport LoLo ?', reponse1 : 'MMA - Boxe - Jiu-jitsu brésilien', reponse2 : 'MMA - Boxe - Judo - Jiu-jitsu brésilien', reponse3 : 'Uniquement de la pêche et de la GRS'}
-,{question : 'Nat-Nat Chat36200, c\'est un sauveteur en quoi ?', reponse1 : 'En ptite flaque', reponse2 : 'En mer', reponse3 : 'Il sait pas nager'}
-,{question : 'Quel est le meilleur côté au baby-foot ?', reponse1 : 'Aucun des deux, d\'un côté y a un poteau biaisé de l\'autre le gardien n\'a plus de tête', reponse2 : 'Le côté rouge parceque Nathan est moins rapide côté bleu', reponse3 : 'Les barres sont niquées des deux côtés'}
-,{question : 'Que faire quand Franck fait une mauvaise vanne ?', reponse1 : 'Lui mettre un carton rouge', reponse2 : 'Demander à Loïc de le frapper en mode MMA', reponse3 : 'Il n\'y a plus rien à faire tellement c\'est récurrent'}
-,{question : 'Quand est-ce que Loïc joue à son jeu préféré ?', reponse1 : 'Quand il passe et repasse aux demis', reponse2 : 'Qand il joue à 2048', reponse3 : 'Quand il chafouine'}
-]
+,{question : 'Aller une classique, qui est le meilleur chafouineur ?', reponse1 : 'Loïc mais il aurait pas dû être élu', reponse2 : 'Nathan', reponse3 : 'Franck la ptite castagne'}]
