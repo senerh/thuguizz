@@ -203,10 +203,14 @@ app.get('/deleteQuestions', (req, res) => {
   db.collection('questions');
 })
 
+var appRoot = process.cwd();
+
+console.log(appRoot);
+
 /**
  * Server is listening on port 3000
  */
-https.createServer({
-  key: fs.readFileSync('key.pem'),
-  cert: fs.readFileSync('cert.pem')
-}, app).listen(3000);
+ https.createServer({
+   key: fs.readFileSync(appRoot + '/key.pem'),
+   cert: fs.readFileSync(appRoot + '/cert.pem')
+ }, app).listen(3000);
