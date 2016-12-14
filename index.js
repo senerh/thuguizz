@@ -2,6 +2,8 @@ const express = require('express');                     //Web structure (routes)
 const bodyParser= require('body-parser');               //Needed for POST methods
 const crypto = require('crypto');                       //Needed for md5 answer encrypt
 const MongoClient = require('mongodb').MongoClient;     //Needed for Mongo database
+const https = require('https');                         //Needed for https
+const fs = require('fs');                               //Needed for read file
 
 const app = express();                                  //Launch app
 app.use(bodyParser.urlencoded({extended: true}))        //Allow POST
@@ -204,6 +206,7 @@ app.get('/deleteQuestions', (req, res) => {
 /**
  * Server is listening on port 3000
  */
-app.listen(3000, function() {
-  console.log('listening on 3000');
-})
+ https.createServer({
+   key: fs.readFileSync('key.pem'),
+   cert: fs.readFileSync('cert.pem')
+ }, app).listen(3000);
